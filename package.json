@@ -10,14 +10,14 @@
     "url": ""
   },
   "scripts": {
-    "dev": "concurrently \"pnpm build --watch\" \"cd example && pnpm dev\"",
-    "build": "tsup --onSuccess \"pnpm yalc publish\"",
+    "dev-tsup": "concurrently \"pnpm build --watch\" \"cd example && pnpm dev\"",
+    "build-tsup": "tsup --onSuccess \"pnpm yalc publish\"",
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore \"{src}/**/*.+(ts|js|tsx)\"",
     "lint:fix": "pnpm lint --fix && prettier --write .",
-    "prepare": "husky install",
     "commit": "cz",
-    "release": "pnpm build && pnpm release-it"
+    "release": "pnpm build && pnpm release-it",
+    "build": "rm -rf dist/ && tsc --build"
   },
   "tsup": {
     "entry": [
@@ -37,12 +37,15 @@
       "react"
     ]
   },
-  "types": "./dist/index.d.ts",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/types/index.d.ts",
   "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
-    }
+    "require": "./lib/cjs/index.js",
+    "import": "./lib/esm/index.js",
+    "types": "./lib/types/index.d.ts"
   },
   "files": [
     "dist"
@@ -75,9 +78,11 @@
   "devDependencies": {
     "@babel/core": "7.20.12",
     "@chakra-ui/icons": "^2.0.14",
-    "@chakra-ui/react": "^2.4.4",
+    "@chakra-ui/react": "^2.4.9",
     "@commitlint/cli": "17.4.1",
     "@commitlint/config-conventional": "17.4.0",
+    "@emotion/react": "11.10.5",
+    "@emotion/styled": "11.10.5",
     "@ryansonshine/commitizen": "4.2.8",
     "@ryansonshine/cz-conventional-changelog": "3.3.4",
     "@solana/web3.js": "^1.58.0",
@@ -106,6 +111,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "release-it": "15.6.0",
+    "shx": "0.3.4",
     "tsup": "6.5.0",
     "typescript": "4.9.4",
     "yalc": "1.0.0-pre.53"
@@ -113,10 +119,12 @@
   "peerDependencies": {
     "@chakra-ui/icons": "^2.0.14",
     "@chakra-ui/react": "^2.4.4",
+    "@emotion/react": "11.10.5",
+    "@emotion/styled": "11.10.5",
     "@solana/web3.js": "^1.58.0",
     "framer-motion": "^7.10.3",
-    "react": "*",
-    "react-dom": "*"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "resolutions": {
     "glob-parent": ">=5.1.2",
@@ -126,6 +134,7 @@
   },
   "dependencies": {
     "@solana/wallet-adapter-base": "0.9.20",
-    "@solana/wallet-adapter-react": "0.15.28"
+    "@solana/wallet-adapter-react": "0.15.28",
+    "lucide-react": "0.108.0"
   }
 }

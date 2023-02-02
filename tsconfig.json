@@ -1,11 +1,29 @@
 {
+  // "compilerOptions": {
+  //   "esModuleInterop": true,
+  //   "jsx": "react-jsx",
+  //   "module": "ESNext",
+  //   "moduleResolution": "node",
+  //   "skipLibCheck": true,
+  //   "strict": true,
+  //   "noEmit": true
+  // }
+
   "compilerOptions": {
-    "esModuleInterop": true,
-    "jsx": "react-jsx",
+    "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "node",
-    "skipLibCheck": true,
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "noEmitOnError": true,
+    "resolveJsonModule": true,
     "strict": true,
-    "noEmit": true
-  }
+    "stripInternal": true,
+    "composite": true,
+    "outDir": "dist",
+    "jsx": "react",
+    "skipLibCheck": true,
+    "baseUrl": "./src"
+  },
+  "include": ["src"]
 }

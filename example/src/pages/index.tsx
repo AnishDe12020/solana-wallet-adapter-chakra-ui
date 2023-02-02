@@ -1,6 +1,7 @@
+/* eslint-disable import/no-relative-packages */
 import Head from 'next/head';
 import { Container, Heading } from '@chakra-ui/react';
-import { Example } from '../../../dist';
+import { WalletDialog, WalletMultiButton } from '../../../dist/src';
 
 export default function Home() {
   return (
@@ -14,7 +15,9 @@ export default function Home() {
       <Container as="main">
         <Heading>Solana Wallet Adapter Chakra UI</Heading>
 
-        <Example />
+        <WalletDialog />
+
+        <WalletMultiButton />
       </Container>
     </>
   );
