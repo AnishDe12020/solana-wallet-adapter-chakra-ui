@@ -10,7 +10,7 @@ import type { AppProps } from 'next/app';
 import { useMemo } from 'react';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { UnsafeBurnerWalletAdapter } from '@solana/wallet-adapter-wallets';
-import { WalletDialogProvider } from '../../../dist/src';
+import { WalletDialogProvider } from 'solana-wallet-adapter-chakra-ui';
 
 export default function App({ Component, pageProps }: AppProps) {
   // // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.

@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.10.5",
     "@next/font": "13.1.6",
     "@solana/wallet-adapter-wallets": "^0.19.11",
+    "@solana/web3.js": "^1.73.2",
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
@@ -23,6 +24,7 @@
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "solana-wallet-adapter-chakra-ui": "file:.yalc/solana-wallet-adapter-chakra-ui",
     "typescript": "4.9.5"
   }
 }

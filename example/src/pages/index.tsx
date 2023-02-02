@@ -1,7 +1,10 @@
 /* eslint-disable import/no-relative-packages */
 import Head from 'next/head';
 import { Container, Heading } from '@chakra-ui/react';
-import { WalletDialog, WalletMultiButton } from '../../../dist/src';
+import {
+  WalletDialog,
+  WalletMultiButton,
+} from 'solana-wallet-adapter-chakra-ui';
 
 export default function Home() {
   return (

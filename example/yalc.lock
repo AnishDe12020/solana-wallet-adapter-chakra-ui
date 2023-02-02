@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "solana-wallet-adapter-chakra-ui": {
+      "signature": "1256c29144f04eb128524b38d765dc5a",
+      "file": true
+    }
+  }
+}

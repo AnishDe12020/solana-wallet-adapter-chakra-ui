@@ -21,9 +21,9 @@
     "stripInternal": true,
     "composite": true,
     "outDir": "dist",
-    "jsx": "react",
     "skipLibCheck": true,
-    "baseUrl": "./src"
+    "jsx": "react-jsx"
   },
-  "include": ["src"]
+  // "include": ["**/*.ts", "src/**/*.tsx"]
+  "include": ["src/**/*.tsx"]
 }
